@@ -7,6 +7,7 @@ export default function Product() {
       <PagesNav />
       <section>
         <img
+          className={styles.productImg}
           src="img-1.jpg"
           alt="person with dog overlooking mountain with sunset"
         />

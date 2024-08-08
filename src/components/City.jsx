@@ -26,12 +26,14 @@ function City() {
   useEffect(
     function () {
       fetchCity(id);
+      console.log("ues");
     },
-    [id]
+    [id, fetchCity]
   );
 
-  if (isLoading) return <Spinner />;
   const { cityName, emoji, date, notes } = currentCity;
+
+  if (isLoading) return <Spinner />;
 
   return (
     <div className={styles.city}>
