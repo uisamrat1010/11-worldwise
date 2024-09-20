@@ -6,7 +6,7 @@ import {
   useCallback,
 } from "react";
 
-const Base_URL = "http://localhost:9000";
+const Base_URL = "https://cities-x4yv.onrender.com/cities";
 
 const CitiesContext = createContext();
 
@@ -75,7 +75,7 @@ function CitiesProvider({ children }) {
       dispatch({ type: "loading" });
       try {
         // setIsLoading(true);
-        const data = await fetch(`${Base_URL}/cities`);
+        const data = await fetch(`${Base_URL}`);
         const res = await data.json();
         dispatch({ type: "cities/loaded", payload: res });
         // setCities(res);
@@ -98,7 +98,7 @@ function CitiesProvider({ children }) {
       dispatch({ type: "loading" });
       try {
         //setIsLoading(true);
-        const data = await fetch(`${Base_URL}/cities/${id}`);
+        const data = await fetch(`${Base_URL}/${id}`);
         const res = await data.json();
         dispatch({ type: "city/loaded", payload: res });
         //setCurrentCity(res);
@@ -116,7 +116,7 @@ function CitiesProvider({ children }) {
     dispatch({ type: "loading" });
     try {
       //setIsLoading(true);
-      const data = await fetch(`${Base_URL}/cities`, {
+      const data = await fetch(`${Base_URL}`, {
         method: "POST",
         body: JSON.stringify(newCity),
         headers: {
@@ -140,7 +140,7 @@ function CitiesProvider({ children }) {
     dispatch({ type: "loading" });
     try {
       // setIsLoading(true);
-      await fetch(`${Base_URL}/cities/${id}`, {
+      await fetch(`${Base_URL}/${id}`, {
         method: "DELETE",
       });
       dispatch({ type: "city/deleted", payload: id });

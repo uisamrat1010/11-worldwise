@@ -51,7 +51,7 @@ function Map() {
       )}
       <MapContainer
         center={mapPosition}
-        zoom={8}
+        zoom={9}
         scrollWheelZoom={true}
         className={styles.map}
       >
